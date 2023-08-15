@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    container_name: mysql
+    build:
+      context: ./docker/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: platinium-group
+      MYSQL_DATABASE: platinium-group
+      MYSQL_USER: platinium-group
+      MYSQL_PASSWORD: platinium-group
+    command: ["--default-authentication-plugin=mysql_native_password"]
+    ports:
+      - "3305:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - docker_symfony_net
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./docker/nginx
+    ports:
+      - '8080:80'
+    volumes:
+      - ./public:/var/www/auctions-api/public
+    networks:
+      - docker_symfony_net
+        
+  php:
+    container_name: php
+    build:
+      context: ./docker/php
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./:/var/www/auctions-api
+    networks:
+      - docker_symfony_net
+
+volumes:
+  mysql-data:
+
+networks:
+  docker_symfony_net:
+    external: true
+  

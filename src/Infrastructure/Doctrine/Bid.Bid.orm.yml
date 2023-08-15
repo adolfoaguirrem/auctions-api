@@ -1,0 +1,16 @@
+App\Domain\Entity\Bid\Bid:
+    type: entity
+    table: bids
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        productId:
+            type: integer
+        buyerId:
+            type: integer
+        amount:
+            type: decimal
+            precision: 8
+            scale: 2
