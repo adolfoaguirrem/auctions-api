@@ -66,17 +66,15 @@ Expected Response:
 
 ## Project set up
 
+Prerequisites:
+* Docker
+* Composer
+* 
 Install and run the application.
 ```sh
 git clone https://github.com/adolfoaguirrem/auctions-api.git
 cd auctions-api
-```
-
-Init docker
-* Start Mysql
-* Import database (Init.sql)
-
-```sh
+composer install
 docker/up
 ```
 
