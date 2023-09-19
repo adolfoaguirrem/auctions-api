@@ -68,14 +68,16 @@ Expected Response:
 
 Prerequisites:
 * Docker
-* Composer
-* 
+
 Install and run the application.
 ```sh
 git clone https://github.com/adolfoaguirrem/auctions-api.git
 cd auctions-api
-composer install
 docker/up
+
+init project:
+docker exec -it [php-container-name] bash
+composer install
 ```
 
 ## Examples of the use of the application.
