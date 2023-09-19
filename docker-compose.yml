@@ -7,10 +7,10 @@ services:
     build:
       context: ./docker/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: auctionsapi
-      MYSQL_DATABASE: auctionsapi
-      MYSQL_USER: auctionsapi
-      MYSQL_PASSWORD: auctionsapi
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     command: ["--default-authentication-plugin=mysql_native_password"]
     ports:
       - "3305:3306"
@@ -29,7 +29,7 @@ services:
       - ./public:/var/www/auctions-api/public
     networks:
       - docker_symfony_net
-        
+
   php:
     container_name: php
     build:
@@ -47,4 +47,3 @@ volumes:
 networks:
   docker_symfony_net:
     external: true
-  
