@@ -36,7 +36,7 @@ Bids
 |2|1|2|99.00|
 |3|1|3|105.00|
 
-Winner Offer for Product 1: 
+Winner Offer for Product 1:
 ```sh
 GET http://auctions-api.test:8080/api/bid/1/result
 
@@ -129,7 +129,7 @@ Json:
 php bin/phpunit
 ```
 
-Functional: 
+Functional:
 * testAuctionResultService
 
 Unit:
@@ -142,3 +142,4 @@ Unit:
 * testProductConstructor
 * testProductSetName
 * testProductSetPrice
+*
