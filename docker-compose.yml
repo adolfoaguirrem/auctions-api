@@ -7,10 +7,10 @@ services:
     build:
       context: ./docker/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: platinium-group
-      MYSQL_DATABASE: platinium-group
-      MYSQL_USER: platinium-group
-      MYSQL_PASSWORD: platinium-group
+      MYSQL_ROOT_PASSWORD: auctionsapi
+      MYSQL_DATABASE: auctionsapi
+      MYSQL_USER: auctionsapi
+      MYSQL_PASSWORD: auctionsapi
     command: ["--default-authentication-plugin=mysql_native_password"]
     ports:
       - "3305:3306"
